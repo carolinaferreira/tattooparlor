@@ -9,7 +9,7 @@
   </a>
 </p>
 
-> NodeJS application for a tattoo parlor to schedule services for your clients.
+> NodeJS application for a tattoo parlor to schedule services for your clients. This repository is part of #100DaysOfCode challenge.
 
 ## Install
 

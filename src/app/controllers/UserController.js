@@ -17,6 +17,13 @@ class UserController {
       provider,
     });
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  async update(req, res) {
+    console.log(req.userId);
+
+    return res.json({ ok: true });
+  }
 }
 
 export default new UserController();

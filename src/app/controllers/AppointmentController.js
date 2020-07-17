@@ -7,10 +7,14 @@ import File from '../models/File';
 /* eslint-disable class-methods-use-this */
 class AppointmentController {
   async index(req, res) {
+    const { page = 1 } = req.query;
+
     const apponitments = await Appointment.findAll({
       where: { user_id: req.userId, canceled_at: null },
       order: ['date'],
       attributes: ['id', 'date'],
+      limit: 20,
+      offset: (page - 1) * 20,
       include: {
         model: User,
         as: 'provider',

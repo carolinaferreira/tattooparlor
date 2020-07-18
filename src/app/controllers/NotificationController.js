@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import Notification from '../schemas/Notification';
 import User from '../models/User';
 
@@ -21,6 +22,16 @@ class NotificationController {
       .limit(20);
 
     return res.json(notifications);
+  }
+
+  async update(req, res) {
+    const notification = await Notification.findByIdAndUpdate(
+      req.params.id,
+      { read: true },
+      { new: true }
+    );
+
+    return res.json(notification);
   }
 }
 
